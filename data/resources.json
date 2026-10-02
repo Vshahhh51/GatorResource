@@ -1,66 +1,325 @@
 [
   {
-    "id": "basic-needs", "name": "Basic Needs Center", "category": "Food & essentials",
+    "id": "basic-needs",
+    "name": "Basic Needs Center",
+    "category": "Food & essentials",
     "description": "Connect with food support, basic needs programs, and referrals during a financial crisis.",
     "nextStep": "Open the Basic Needs website and use Request Basic Needs Support, or email basicneeds@sfsu.edu.",
-    "sourceUrl": "https://basicneeds.sfsu.edu/", "reviewedAt": "2026-10-02",
+    "sourceUrl": "https://basicneeds.sfsu.edu/",
+    "reviewedAt": "2026-10-02",
     "availability": "Program schedules and current food availability are unconfirmed. Office hours do not establish food distribution hours.",
-    "eligibility": "Staff assess which programs fit your circumstances; eligibility is not confirmed here."
+    "eligibility": "Staff assess which programs fit your circumstances; eligibility is not confirmed here.",
+    "contact": {
+      "location": "Student Services Building, Room 301, 1600 Holloway Ave, San Francisco, CA 94132",
+      "officeHours": "Mon–Thu 8:30 am–5 pm; Fri 8:30 am–4 pm",
+      "phone": "(415) 338-1203",
+      "email": "basicneeds@sfsu.edu"
+    }
   },
   {
-    "id": "housing", "name": "Housing Resources & Navigation", "category": "Housing",
+    "id": "housing",
+    "name": "Housing Resources & Navigation",
+    "category": "Housing",
     "description": "Basic Needs staff provide housing navigation, resource referrals, and assessment for emergency housing support.",
     "nextStep": "Review the housing support page and contact basicneeds@sfsu.edu to ask about an assessment.",
-    "sourceUrl": "https://basicneeds.sfsu.edu/housing-resources-navigation", "reviewedAt": "2026-10-02",
+    "sourceUrl": "https://basicneeds.sfsu.edu/housing-resources-navigation",
+    "reviewedAt": "2026-10-02",
     "availability": "Current funding, hotel placements, and appointment availability are unknown.",
-    "eligibility": "Program staff must assess eligibility. Housing or financial assistance is not guaranteed."
+    "eligibility": "Program staff must assess eligibility. Housing or financial assistance is not guaranteed.",
+    "contact": {
+      "location": "Student Services Building, Room 301, 1600 Holloway Ave, San Francisco, CA 94132",
+      "officeHours": "Mon–Thu 8:30 am–5 pm; Fri 8:30 am–4 pm",
+      "phone": "(415) 338-1203",
+      "email": "basicneeds@sfsu.edu"
+    }
   },
   {
-    "id": "career", "name": "Career & Leadership Development", "category": "Jobs & careers",
+    "id": "career",
+    "name": "Career & Leadership Development",
+    "category": "Jobs & careers",
     "description": "Explore jobs and internships, get resume and cover letter resources, and prepare for interviews.",
     "nextStep": "Open the career website and select Schedule an Appointment or explore Handshake.",
-    "sourceUrl": "https://career.sfsu.edu/", "reviewedAt": "2026-10-02",
+    "sourceUrl": "https://career.sfsu.edu/",
+    "reviewedAt": "2026-10-02",
     "availability": "Specific appointment openings and suitability for your schedule are unknown.",
-    "eligibility": "Confirm access and service requirements with the career office."
+    "eligibility": "Confirm access and service requirements with the career office.",
+    "contact": {
+      "location": "Administration Building, Suite 254",
+      "officeHours": "Mon–Fri 8:30 am–4:30 pm; drop-in Mon–Fri 10–11 am",
+      "phone": "(415) 338-1764",
+      "email": "career@sfsu.edu"
+    }
   },
   {
-    "id": "counseling", "name": "Counseling & Psychological Services", "category": "Wellbeing",
+    "id": "counseling",
+    "name": "Counseling & Psychological Services",
+    "category": "Wellbeing",
     "description": "Find campus counseling services, support options, groups, and workshops.",
     "nextStep": "Review Counseling Services on the official site or call 415-338-2208 for assistance.",
-    "sourceUrl": "https://psyservs.sfsu.edu/", "reviewedAt": "2026-10-02",
+    "sourceUrl": "https://psyservs.sfsu.edu/",
+    "reviewedAt": "2026-10-02",
     "availability": "Appointment openings and current access to particular services are unconfirmed.",
-    "eligibility": "Ask CAPS about service eligibility and the appropriate support option."
+    "eligibility": "Ask CAPS about service eligibility and the appropriate support option.",
+    "contact": {
+      "location": "Gator Student Health Center, 3rd Floor, 730 Font Blvd, San Francisco, CA 94132",
+      "officeHours": "Mon–Fri 8 am–4:45 pm",
+      "phone": "(415) 338-2208",
+      "email": "caps@sfsu.edu"
+    }
   },
   {
-    "id": "access", "name": "Disability Programs & Resource Center", "category": "Accessibility",
+    "id": "access",
+    "name": "Disability Programs & Resource Center",
+    "category": "Accessibility",
     "description": "Connect with support for disability access in academics, campus events, and employment.",
     "nextStep": "Visit the Students section of the DPRC site or email dprc@sfsu.edu about getting connected.",
-    "sourceUrl": "https://access.sfsu.edu/", "reviewedAt": "2026-10-02",
+    "sourceUrl": "https://access.sfsu.edu/",
+    "reviewedAt": "2026-10-02",
     "availability": "Contact DPRC to confirm specialist meeting times and availability.",
-    "eligibility": "DPRC determines accommodations and requirements; this app cannot determine eligibility."
+    "eligibility": "DPRC determines accommodations and requirements; this app cannot determine eligibility.",
+    "contact": {
+      "location": "Student Services Building, Room 110, 1600 Holloway Ave, San Francisco, CA 94132",
+      "officeHours": "Mon–Fri 8:30 am–5 pm. The DPRC site says drop-in hours change to twice-weekly office hours with Disability Specialists starting Jan 2, 2026; confirm the current schedule.",
+      "phone": "(415) 338-2472 (video phone: (415) 335-7210)",
+      "email": "dprc@sfsu.edu"
+    }
   },
   {
-    "id": "tutoring", "name": "Tutoring & Academic Support Center", "category": "Academic support",
+    "id": "tutoring",
+    "name": "Tutoring & Academic Support Center",
+    "category": "Academic support",
     "description": "Free peer tutoring and academic support for SF State students, with campus and online options.",
     "nextStep": "Visit the tutoring site and select Make a One-Time Appointment or contact tutoring@sfsu.edu.",
-    "sourceUrl": "https://tutoring.sfsu.edu/", "reviewedAt": "2026-10-02",
+    "sourceUrl": "https://tutoring.sfsu.edu/",
+    "reviewedAt": "2026-10-02",
     "availability": "Subject-specific openings are unknown. The page lists differing virtual schedules; confirm your service and time with TASC.",
-    "eligibility": "Ask TASC to confirm support for your course and current enrollment."
+    "eligibility": "Ask TASC to confirm support for your course and current enrollment.",
+    "contact": {
+      "location": "Library, Room 220 (LIB 220), 1600 Holloway Ave, San Francisco, CA 94132",
+      "officeHours": "On campus: Mon–Thu 9 am–5 pm, Fri 10 am–2 pm. Virtual: Mon–Thu 10 am–4 pm, Fri 10 am–2 pm",
+      "phone": "(415) 405-5516",
+      "email": "tutoring@sfsu.edu"
+    }
   },
   {
-    "id": "financial-aid", "name": "Office of Student Financial Aid", "category": "Financial aid",
+    "id": "financial-aid",
+    "name": "Office of Student Financial Aid",
+    "category": "Financial aid",
     "description": "Get help navigating financial aid applications, awards, scholarships, and the aid process.",
     "nextStep": "Use Contact Us on the financial aid website to ask about your next step.",
-    "sourceUrl": "https://financialaid.sfsu.edu/", "reviewedAt": "2026-10-02",
+    "sourceUrl": "https://financialaid.sfsu.edu/",
+    "reviewedAt": "2026-10-02",
     "availability": "Appointment availability and the status of individual awards are unknown.",
-    "eligibility": "The financial aid office determines eligibility and award conditions. Funding is not guaranteed."
+    "eligibility": "The financial aid office determines eligibility and award conditions. Funding is not guaranteed.",
+    "contact": {
+      "location": "One Stop, Student Services Building, 1600 Holloway Ave, San Francisco, CA 94132",
+      "officeHours": "Mon–Fri 9 am–5 pm (phone line: Mon–Fri 9 am–4 pm)",
+      "phone": "(415) 338-7000",
+      "email": "finaid@sfsu.edu"
+    }
   },
   {
-    "id": "advising", "name": "Undergraduate Advising Center", "category": "Academic support",
+    "id": "advising",
+    "name": "Undergraduate Advising Center",
+    "category": "Academic support",
     "description": "Get guidance on degree planning, choosing classes, exploring majors, and academic success strategies.",
     "nextStep": "Use Schedule an Appointment on the advising website, or call 415-338-2101 for booking help.",
-    "sourceUrl": "https://advising.sfsu.edu/", "reviewedAt": "2026-10-02",
+    "sourceUrl": "https://advising.sfsu.edu/",
+    "reviewedAt": "2026-10-02",
     "availability": "Appointment openings are unknown. Drop-in access depends on staff availability and advising team.",
-    "eligibility": "This center serves undergraduate advising needs; confirm the correct team for your situation."
+    "eligibility": "This center serves undergraduate advising needs; confirm the correct team for your situation.",
+    "contact": {
+      "location": "Administration Building, Room 203, 1600 Holloway Ave, San Francisco, CA 94132",
+      "officeHours": "Mon–Fri 8:30 am–4:30 pm",
+      "phone": "(415) 338-2101",
+      "email": "uacadvising@sfsu.edu"
+    }
+  },
+  {
+    "id": "student-health",
+    "name": "Gator Student Health Center",
+    "category": "Wellbeing",
+    "description": "Confidential basic health services, primary care, pharmacy, and laboratory services for students.",
+    "nextStep": "Visit the Student Health site, log in to the myHealth portal to book, or call 415-338-1251.",
+    "sourceUrl": "https://health.sfsu.edu/",
+    "reviewedAt": "2026-10-02",
+    "availability": "Appointment openings and which services are available to you are unconfirmed. Office hours do not establish pharmacy, lab, or appointment hours.",
+    "eligibility": "Ask Student Health about which services you can use and any costs; eligibility is not confirmed here.",
+    "contact": {
+      "location": "Gator Student Health Center, 2nd Floor, 730 Font Blvd, San Francisco, CA 94132",
+      "officeHours": "Mon–Thu 8:15 am–4:45 pm; Fri 9:15 am–4:45 pm",
+      "phone": "(415) 338-1251",
+      "email": "StudentHealthServices@sfsu.edu"
+    }
+  },
+  {
+    "id": "library",
+    "name": "J. Paul Leonard Library",
+    "category": "Academic support",
+    "description": "Library services including research help from librarians, laptop and equipment checkout, room reservations, printing, and interlibrary loan.",
+    "nextStep": "Open the library site and choose Chat with a Librarian, Email a Librarian, or Meet with a Librarian.",
+    "sourceUrl": "https://library.sfsu.edu/",
+    "reviewedAt": "2026-10-02",
+    "availability": "Building hours and research help hours were not stated on the page reviewed. Check the library site for current hours; equipment availability is unknown.",
+    "eligibility": "Confirm access to specific services and borrowing with the library.",
+    "contact": {
+      "location": "1630 Holloway Avenue, San Francisco, CA 94132",
+      "officeHours": "Not listed on the page reviewed. See the library's “All Hours” page for current hours.",
+      "phone": "(415) 338-1552",
+      "email": "ask@sfsu.libanswers.com"
+    }
+  },
+  {
+    "id": "dean-of-students",
+    "name": "Dean of Students",
+    "category": "Student support",
+    "description": "Student support and case management, including the Action Care Team for students in distress, basic needs support, conduct and accountability services, and referrals to SAFE Place for gender-based violence support.",
+    "nextStep": "Email dos@sfsu.edu or call (415) 338-2032. For SAFE Place, email safeplace@sfsu.edu or drop in at the Gator Student Health Center, Room 308.",
+    "sourceUrl": "https://dos.sfsu.edu/",
+    "reviewedAt": "2026-10-02",
+    "availability": "Appointment openings and response times are unknown. The page lists after-hours SAFE Place support through SFWAR at 415-647-7273. This app is not an emergency service.",
+    "eligibility": "Staff decide which support or process applies to your situation; eligibility is not confirmed here.",
+    "contact": {
+      "location": "Student Services Building, Suite 403, 1600 Holloway Avenue, San Francisco, CA 94132",
+      "officeHours": "Mon–Fri 8 am–5 pm",
+      "phone": "(415) 338-2032",
+      "email": "dos@sfsu.edu"
+    }
+  },
+  {
+    "id": "veterans",
+    "name": "Veterans Services Office",
+    "category": "Student support",
+    "description": "Guidance on VA education benefits and certification, admissions help, credit for training, and military leave policy. Includes the Vets Corner social and study space.",
+    "nextStep": "Visit OneStop Window #6, call 415-338-2336, or email veterans@sfsu.edu to get started.",
+    "sourceUrl": "https://veterans.sfsu.edu/",
+    "reviewedAt": "2026-10-02",
+    "availability": "Appointment availability and the Vets Corner's hours are unknown. Office hours do not establish Vets Corner hours.",
+    "eligibility": "Benefits eligibility is determined by the VA and the office; it is not confirmed here.",
+    "contact": {
+      "location": "Student Services Building, OneStop Window #6, 1600 Holloway Avenue, San Francisco, CA 94132",
+      "officeHours": "Mon–Fri 9 am–5 pm (in person and phone)",
+      "phone": "(415) 338-2336",
+      "email": "veterans@sfsu.edu"
+    }
+  },
+  {
+    "id": "international",
+    "name": "Division of International Education",
+    "category": "Student support",
+    "description": "Advising for F-1 visa holders, J-1 exchange students, prospective international students, and study abroad participants, plus workshops on wellness, academics, and life in San Francisco.",
+    "nextStep": "Use the advising appointment links on the website for your student type, or email international@sfsu.edu.",
+    "sourceUrl": "https://international.sfsu.edu/",
+    "reviewedAt": "2026-10-02",
+    "availability": "Advising schedules differ by student type, and the page does not list them together. Confirm advising times with the office.",
+    "eligibility": "Which advising you can use depends on your student type; the office confirms this.",
+    "contact": {
+      "location": "Village at Centennial Square, Building C, San Francisco, CA 94132",
+      "officeHours": "Front desk Mon–Fri 9 am–noon and 1–4:30 pm. Advising times vary by student type.",
+      "phone": "(415) 338-1293",
+      "email": "international@sfsu.edu"
+    }
+  },
+  {
+    "id": "university-housing",
+    "name": "University Housing Office",
+    "category": "Housing",
+    "description": "Help with on-campus housing applications, residential community information, and support for current residents.",
+    "nextStep": "Visit the Housing site, email housing@sfsu.edu, or call (415) 338-1067 to ask about applying or your housing questions.",
+    "sourceUrl": "https://housing.sfsu.edu/",
+    "reviewedAt": "2026-10-02",
+    "availability": "Room availability, application windows, and appointment times are unknown. Office hours do not establish when housing is available.",
+    "eligibility": "Housing eligibility and priority are decided by the Housing Office; it is not confirmed here. For emergency housing support, see the Basic Needs housing navigation resource.",
+    "contact": {
+      "location": "800 Font Boulevard, San Francisco, CA 94132",
+      "officeHours": "Mon–Fri 9 am–5 pm",
+      "phone": "(415) 338-1067",
+      "email": "housing@sfsu.edu"
+    }
+  },
+  {
+    "id": "eop",
+    "name": "Educational Opportunity Program (EOP)",
+    "category": "Academic support",
+    "description": "Personalized academic counseling, tutoring and peer mentoring, workshops, financial aid guidance, and wellness resources for students who are low-income and the first in their families to attend college.",
+    "nextStep": "Current participants schedule through Navigator. Prospective students can email applyeop@sfsu.edu; general questions go to eop@sfsu.edu.",
+    "sourceUrl": "https://eop.sfsu.edu/",
+    "reviewedAt": "2026-10-02",
+    "availability": "Appointment openings are unknown. The page mentioned a January 31, 2026 application deadline for a past cycle; confirm the current deadline and process with EOP.",
+    "eligibility": "The page describes the program as serving students who are low-income and first-generation. EOP decides admission; it is not guaranteed or determined here.",
+    "contact": {
+      "location": "Student Services Building, Room 201, 1600 Holloway Avenue, San Francisco, CA 94132",
+      "officeHours": "Mon–Fri 9 am–5 pm",
+      "phone": "(415) 338-1085",
+      "email": "eop@sfsu.edu"
+    }
+  },
+  {
+    "id": "registrar",
+    "name": "Office of the Registrar",
+    "category": "Campus services",
+    "description": "Transcript ordering, graduation processing, academic forms, dates and deadlines, and petitions such as major or minor changes and leaves of absence.",
+    "nextStep": "Open the Registrar site to find the form or guide you need, or email registrar@sfsu.edu or call (415) 338-2350.",
+    "sourceUrl": "https://registrar.sfsu.edu/",
+    "reviewedAt": "2026-10-02",
+    "availability": "Processing times and deadlines for your specific request are unknown; check the Registrar's dates and deadlines page.",
+    "eligibility": "Whether a petition or request is approved is decided by the university; it is not determined here.",
+    "contact": {
+      "location": "Student Services Building, Room 303, 1600 Holloway Avenue, San Francisco, CA 94132",
+      "officeHours": "Mon–Fri 9 am–5 pm (One Stop and phone)",
+      "phone": "(415) 338-2350",
+      "email": "registrar@sfsu.edu"
+    }
+  },
+  {
+    "id": "it-help",
+    "name": "IT Service Desk",
+    "category": "Campus services",
+    "description": "Help with Wi-Fi, account and login problems, email, and compromised accounts.",
+    "nextStep": "Use the Get Help request form on the IT site, join the Virtual Service Desk, visit ADM 125, or call (415) 338-1420.",
+    "sourceUrl": "https://its.sfsu.edu/",
+    "reviewedAt": "2026-10-02",
+    "availability": "On-site desk hours and Virtual Service Desk hours differ (listed above). Wait times are unknown.",
+    "eligibility": "Confirm with IT which services are available for your account.",
+    "contact": {
+      "location": "Administration Building, Room 125 (ADM 125)",
+      "officeHours": "On-site Mon–Fri 8 am–5 pm; Virtual Help Desk Mon–Fri 9 am–4 pm",
+      "phone": "(415) 338-1420",
+      "email": "service@sfsu.edu"
+    }
+  },
+  {
+    "id": "parking",
+    "name": "Parking & Transportation Services",
+    "category": "Campus services",
+    "description": "Information on parking for the campus community and on public transportation, biking, and other ways to get to campus.",
+    "nextStep": "Open the Parking & Transportation site for options, or email parking@sfsu.edu or call (415) 338-1441.",
+    "sourceUrl": "https://parking.sfsu.edu/",
+    "reviewedAt": "2026-10-02",
+    "availability": "Permit availability and prices are unknown; check the official site.",
+    "eligibility": "Confirm permit requirements and eligibility with the office.",
+    "contact": {
+      "location": "1600 Holloway Avenue, San Francisco, CA 94132 (specific building not stated on the page reviewed)",
+      "officeHours": "Mon–Fri 8 am–5 pm (closed 1–2 pm)",
+      "phone": "(415) 338-1441",
+      "email": "parking@sfsu.edu"
+    }
+  },
+  {
+    "id": "campus-rec",
+    "name": "Campus Recreation (Mashouf Wellness Center)",
+    "category": "Fitness & recreation",
+    "description": "Aquatics, fitness and wellness, intramural sports, sports clubs, outdoor adventures, and the Outdoor Resource Center.",
+    "nextStep": "Open the Campus Recreation site and use the Member Portal to sign in, or call (415) 405-9355 or email mwcmembers@sfsu.edu with membership questions.",
+    "sourceUrl": "https://campusrec.sfsu.edu/",
+    "reviewedAt": "2026-10-02",
+    "availability": "The page lists Fall 2026 facility hours (below). Hours for individual classes, pools, intramurals, and clubs are not stated here and may differ.",
+    "eligibility": "The page references student, faculty/staff, and alumni memberships. Whether you already have access or need a membership is not confirmed here; ask Campus Recreation.",
+    "contact": {
+      "location": "755 Font Blvd., San Francisco, CA 94132",
+      "officeHours": "Facility hours (Fall 2026): Mon–Thu 6:30 am–10 pm; Fri–Sun 9 am–5 pm",
+      "phone": "(415) 405-9355 (405-WELL)",
+      "email": "mwcmembers@sfsu.edu"
+    }
   }
 ]

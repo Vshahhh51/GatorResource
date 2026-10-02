@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { test } from "node:test";
 import { matchResources, MatchError, validateResult } from "../lib/matching.ts";
 import { resources } from "../lib/resources.ts";
+import { createSession, SESSION_COOKIE } from "../lib/session.ts";
 import { POST } from "../app/api/match/route.ts";
 
 const auth = { project: "demo-project", location: "global", getHeaders: async () => new Headers({ Authorization: "Bearer fake" }) };
@@ -52,18 +53,19 @@ test("truncated and malformed model responses are rejected", async () => {
   }
 });
 test("directory has eight unique, dated official sources", () => {
-  assert.equal(resources.length, 8);
-  assert.equal(new Set(resources.map(r => r.id)).size, 8);
+  assert.equal(resources.length, 19);
+  assert.equal(new Set(resources.map(r => r.id)).size, 19);
   for (const resource of resources) {
     assert.ok(new URL(resource.sourceUrl).hostname.endsWith(".sfsu.edu"));
     assert.match(resource.reviewedAt, /^\d{4}-\d{2}-\d{2}$/);
     assert.ok(resource.nextStep && resource.availability && resource.eligibility);
   }
 });
+const signedIn = { cookie: `${SESSION_COOKIE}=${createSession("student@sfsu.edu")}` };
 test("route rejects cross-origin and malformed requests without returning raw errors", async () => {
-  const crossOrigin = await POST(new Request("http://localhost/api/match", { method: "POST", headers: { origin: "https://other.example" } }));
+  const crossOrigin = await POST(new Request("http://localhost/api/match", { method: "POST", headers: { ...signedIn, origin: "https://other.example" } }));
   assert.equal(crossOrigin.status, 403);
-  const malformed = await POST(new Request("http://localhost/api/match", { method: "POST", headers: { "content-type": "application/json" }, body: "{" }));
+  const malformed = await POST(new Request("http://localhost/api/match", { method: "POST", headers: { ...signedIn, "content-type": "application/json" }, body: "{" }));
   assert.equal(malformed.status, 400);
   assert.equal(malformed.headers.get("cache-control"), "no-store");
 });
@@ -71,4 +73,11 @@ test("route rejects cross-origin and malformed requests without returning raw er
 test("ADC failure and non-global configuration are rejected", async () => {
   await assert.rejects(matchResources("Food", { ...auth, getHeaders: async () => { throw new Error("secret credential detail"); } }), (e: unknown) => e instanceof MatchError && e.code === "credentials" && !e.message.includes("secret"));
   await assert.rejects(matchResources("Food", { ...auth, location: "us-central1" }), (e: unknown) => e instanceof MatchError && e.code === "configuration");
+});
+
+test("every directory entry has office hours, location, phone, and email", () => {
+  for (const resource of resources) {
+    const { officeHours, location, phone, email } = resource.contact;
+    assert.ok(officeHours && location && phone && /^[^@\s]+@[^@\s]+\.[a-z]+$/i.test(email), resource.id);
+  }
 });

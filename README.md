@@ -1,33 +1,98 @@
 # GatorResource
 
-A Next.js campus support finder for SF State students, with Gemini matching and eight source-backed resources. Built from the specification in `AGENTS.md`; the user selected Next.js instead of Streamlit.
+**Describe what you need. Find SF State support. Know your next step.**
 
-## Run locally: Vertex AI with ADC
+GatorResource is an independent, student-built prototype that helps San Francisco State University students find campus support from a plain-language description. Gemini reads what the student wrote, picks up to three matching resources from a small directory of official SFSU offices, and explains each match. Every link, office hour, location, and contact detail comes from the directory, not from the model.
 
-Requires Node.js 22.7 or newer and Google Cloud CLI for local authentication.
+> Not an official SFSU service and not an emergency-response tool. The directory is small and does not cover every campus service. Students should confirm details with program staff.
 
-Set these values in `.env.local` (do not overwrite an existing file from the example):
+## Features
 
-```env
-GOOGLE_CLOUD_PROJECT=YOUR_PROJECT_ID
-GOOGLE_CLOUD_LOCATION=global
-GEMINI_MODEL=gemini-3.8-flash
+- **Plain-language search.** Describe one or several needs (for example food plus a part-time job) and get up to three matches, each with an AI explanation, a constraint note, and a next step from the official source. An empty result is valid.
+- **Browse without AI.** All 19 resources can be browsed and filtered by category with no model request.
+- **Verified office info.** Each resource shows office hours, location, phone, email, an official link, and the date the source was reviewed.
+- **Honest about unknowns.** Program hours, appointment availability, and eligibility are treated as separate facts. If a page did not state something, the card says it is unknown.
+- **Appointment requests.** Students sign in with an SFSU email, choose a preferred date, time of day, and format, and get a pre-filled email draft to the office plus a calendar reminder. This is a *request*, not a confirmed booking (see Limits).
+- **Student sign-in.** Browsing and search are open to everyone. Only appointment requests need an `@sfsu.edu` address.
+- **Save next steps.** Download the matched next steps as a text file.
+
+## The directory (19 resources)
+
+Basic Needs Center, Housing Resources & Navigation, University Housing Office, Career & Leadership Development, Counseling & Psychological Services, Gator Student Health Center, Disability Programs & Resource Center, Tutoring & Academic Support Center, Undergraduate Advising Center, Educational Opportunity Program, J. Paul Leonard Library, Office of Student Financial Aid, Office of the Registrar, IT Service Desk, Parking & Transportation Services, Dean of Students, Veterans Services Office, Division of International Education, and Campus Recreation (Mashouf Wellness Center).
+
+Records live in `data/resources.json` with the source URL and review date (2026-10-02). Add a resource only after reading its official page.
+
+## How it works
+
+```
+Student → Next.js page → POST /api/match → Gemini on Vertex AI (structured JSON)
+                                      ↓
+                    validate IDs and shape → resolve links, hours, next steps
+                                      ↓                from data/resources.json
+                               result cards
 ```
 
-```powershell
-npm install
-gcloud auth application-default login
-gcloud auth application-default set-quota-project YOUR_PROJECT_ID
-npm run check:env
-npm run test:gemini
-npm run dev
+- The model may return only resource IDs from the directory (enforced in the response schema and validated again on the server). Unknown IDs, malformed output, and extra fields are rejected, and duplicates are removed.
+- AI text is labeled separately from verified directory information. The student's text is treated as untrusted input.
+- Nothing is stored. Search text and results live only in the page's temporary state and are not written to a database or logs.
+
+## Tech stack
+
+Next.js (App Router) · React · TypeScript · Gemini on Vertex AI (Application Default Credentials) · Google Cloud Run · local JSON data. No database.
+
+## Project layout
+
+```
+app/
+  page.tsx            Home (server): reads the session, renders the portal
+  portal.tsx          Search, results, and directory UI
+  login/              SFSU email sign-in (server action + form)
+  book/[id]/          Appointment request page and form (sign-in required)
+  api/match/route.ts  Search endpoint
+  logo.tsx, icons.tsx Logo and line icons
+  globals.css         Styles
+lib/
+  matching.ts         Gemini request, schema, and validation
+  vertex.ts           Vertex AI endpoint and ADC headers
+  resources.ts        Typed access to the directory
+  session.ts          Signed session cookie and @sfsu.edu check
+data/resources.json   Verified resource directory
+tests/                Mocked tests
+scripts/              Environment and live Gemini checks
+Dockerfile            Cloud Run container (listens on PORT)
 ```
 
-Open http://localhost:3000. Enable Vertex AI and billing for your project. The ADC identity needs Vertex AI permissions (typically Vertex AI User) and permission to consume services in the quota project. Restart the dev server after configuration changes. GEMINI_API_KEY is no longer used. Keep ADC credential files outside this repository.
+## Run locally
 
-The test performs a basic request and then the app's structured matching request. Check both PASS messages. It uses real API quota but does not print credentials. The directory remains usable without ADC.
+Requires Node.js 22.7 or newer and the Google Cloud CLI.
 
-## Checks
+1. Copy `.env.example` to `.env.local` and fill it in:
+
+   ```env
+   GOOGLE_CLOUD_PROJECT=YOUR_PROJECT_ID
+   GOOGLE_CLOUD_LOCATION=global
+   GEMINI_MODEL=gemini-3.8-flash
+   SESSION_SECRET=any-long-random-string
+   ```
+
+   The model ID is configuration; confirm your project has access to it. `SESSION_SECRET` signs the login cookie. If it is missing, a random one is used and everyone is signed out on each restart.
+
+2. Install and authenticate:
+
+   ```powershell
+   npm install
+   gcloud auth application-default login
+   gcloud auth application-default set-quota-project YOUR_PROJECT_ID
+   npm run check:env
+   npm run test:gemini
+   npm run dev
+   ```
+
+3. Open http://localhost:3000.
+
+Enable Vertex AI and billing for your project. The ADC identity needs Vertex AI permissions (typically Vertex AI User) and permission to use the quota project. Keep credential files out of this repository. `npm run test:gemini` makes real requests, uses quota, and does not print credentials. The directory stays usable if Gemini is unavailable.
+
+## Tests
 
 ```powershell
 npm test
@@ -35,44 +100,44 @@ npm run typecheck
 npm run build
 ```
 
-Tests mock Gemini and exercise validation, multi-need result handling, duplicates, missing project/ADC credentials, quota, timeout, prompt separation, malformed output, directory integrity, and request validation. They do not verify live model quality or access.
+The tests mock Gemini. They cover response validation, multi-need results, duplicate IDs, unknown IDs, malformed output, missing credentials, quota and timeout errors, prompt separation, request validation, and directory integrity (including office hours, location, phone, and email on every resource). They do not show how good the model's answers are or whether your project can reach the model; use `npm run test:gemini` and manual checks for that.
 
-Manual checks after starting the app:
+Manual checks:
 
-- Use the food-and-job example: expect distinct relevant matches; confirm that schedule uncertainty is acknowledged.
-- Try a need outside the directory, such as pet boarding: expect no match.
-- Search, then edit or clear the input while waiting: no old result should reappear.
-- Try a missing ADC credentials: directory browsing must remain usable.
-- Inspect mobile layout, keyboard navigation, result download, and official links.
+- Food plus job example: distinct matches, and schedule uncertainty is acknowledged rather than invented.
+- A request outside the directory (for example pet boarding): no match.
+- Edit or clear the box mid-search: no stale results reappear.
+- Try an instruction to invent a resource: no unlisted link appears.
+- Check keyboard navigation, mobile layout, official links, and the appointment flow signed in and signed out.
 
-## Cloud Run
+## Deploy to Cloud Run
 
-Run npm install to update the lockfile for google-auth-library. Enable Cloud Run, Cloud Build, Artifact Registry, and Vertex AI in your credited project. Assign a dedicated runtime service account the Vertex AI User role in the model project. Cloud Run gets ADC from that identity; no key secret or local ADC file is needed in the container.
+Enable Cloud Run, Cloud Build, Artifact Registry, and Vertex AI in the project that holds your credits. Give a dedicated runtime service account the Vertex AI User role. Cloud Run supplies ADC from that identity, so no key file goes in the container.
 
 ```powershell
-gcloud run deploy gator-resource --source . --project YOUR_CREDITED_PROJECT --region us-west1 --allow-unauthenticated --port 8080 --max-instances 1 --service-account YOUR_SERVICE_ACCOUNT_EMAIL --set-env-vars GOOGLE_CLOUD_PROJECT=YOUR_CREDITED_PROJECT,GOOGLE_CLOUD_LOCATION=global,GEMINI_MODEL=gemini-3.8-flash
+gcloud run deploy gator-resource --source . --project YOUR_PROJECT --region us-west1 --allow-unauthenticated --port 8080 --max-instances 1 --service-account YOUR_SERVICE_ACCOUNT_EMAIL --set-env-vars GOOGLE_CLOUD_PROJECT=YOUR_PROJECT,GOOGLE_CLOUD_LOCATION=global,GEMINI_MODEL=gemini-3.8-flash,SESSION_SECRET=YOUR_RANDOM_SECRET
 ```
 
-Cloud Run hosting can be regional while the Vertex AI model endpoint is global. This public deployment may incur charges; check your credited billing account and provider quotas. Maximum instances is not a spending cap.
+Prefer Secret Manager for `SESSION_SECRET` on a shared deployment. The service is public and search is open, so anyone can use your Gemini quota. Check quotas and billing, because maximum instances is not a spending cap. After deploying, open the URL, complete a real search, check Cloud Billing for credit usage, and save screenshots. Deployment files alone do not show credit use or a working live integration.
 
-After deployment: open the service URL, complete a real Gemini search, check Cloud Billing credit usage, and capture desktop/mobile screenshots. Deployment files alone do not establish GDG credit use or a successful live integration.
+## Limits and honest notes
 
-## Demo (60–90 seconds)
-
-1. Explain the student problem: multiple needs, scattered campus websites.
-2. Submit the food-and-job example; show Gemini's separate reasons and explicit schedule uncertainty.
-3. Open an official next step and show the reviewed source date.
-4. Browse a category without another AI request.
-5. Explain the small directory, temporary app memory, provider processing, and independent prototype status.
-
-## Sources and design references
-
-Resource citations and review dates live in `data/resources.json`. Reviewed official pages: [Basic Needs](https://basicneeds.sfsu.edu/), [housing navigation](https://basicneeds.sfsu.edu/housing-resources-navigation), [career support](https://career.sfsu.edu/), [CAPS](https://psyservs.sfsu.edu/), [DPRC](https://access.sfsu.edu/), [TASC](https://tutoring.sfsu.edu/), [financial aid](https://financialaid.sfsu.edu/), and [undergraduate advising](https://advising.sfsu.edu/).
-
-Implementation references: [Gemini models](https://ai.google.dev/gemini-api/docs/models), [structured output](https://ai.google.dev/gemini-api/docs/generate-content/structured-output), and [Next.js standalone output](https://nextjs.org/docs/app/api-reference/config/next-config-js/output).
+- **Sign-in only checks the email domain.** It accepts `name@sfsu.edu` but does not prove the person owns that inbox, so it is not secure identity verification. Real verification would use Google Sign-In restricted to `sfsu.edu` or an emailed one-time code.
+- **Appointments are requests.** The app cannot see office calendars or book into university systems. It prepares an email for the student to send from their own account; the office replies with what is available. Some offices use their own scheduling tools, linked from each official page.
+- **Privacy.** The student's description is sent to Google Gemini; students are told to leave out names, IDs, and private records. Google's data policies still apply. The app stores nothing except a signed cookie holding the signed-in email, and does not log search text.
+- **Office hours are not program hours.** Hours shown are office or facility hours from the official page, not food distribution, pharmacy, class, or appointment hours.
+- **Information can change.** Review dates are shown on each card; re-check the official pages before relying on them.
 
 ## Verification status
 
-Ten mocked backend tests pass, including the global Vertex endpoint, Bearer authorization, absence of API-key headers, and ADC failures. Installation of the new google-auth-library dependency was blocked by EACCES in this environment. Run npm install to synchronize dependencies and the lockfile, then typecheck/build. Live ADC/model access, deployment, and credit usage remain unverified; GOOGLE_CLOUD_PROJECT is not yet configured locally.
+- Mocked tests and typecheck pass in the development environment.
+- Live Gemini access, Cloud Run deployment, and Cloud credit usage are **not yet verified**. Complete them with your credited project before submission.
+- Contact details were read from official SFSU pages on 2026-10-02, not independently confirmed with the offices.
 
-Vertex references: [ADC quickstart](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/quickstart), [Google Auth Library](https://github.com/googleapis/google-auth-library-nodejs).
+## Sources
+
+Official pages are cited per resource in `data/resources.json`. Implementation references: [Gemini on Vertex AI](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/quickstart), [Google Auth Library](https://github.com/googleapis/google-auth-library-nodejs), [Next.js standalone output](https://nextjs.org/docs/app/api-reference/config/next-config-js/output).
+
+## Project documents
+
+`IDEA.md` (problem, audience, scope), `ARCHITECTURE.md` (technical design), and `AGENTS.md` (build rules for AI coding agents).
