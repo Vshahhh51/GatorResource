@@ -1,0 +1,66 @@
+[
+  {
+    "id": "basic-needs", "name": "Basic Needs Center", "category": "Food & essentials",
+    "description": "Connect with food support, basic needs programs, and referrals during a financial crisis.",
+    "nextStep": "Open the Basic Needs website and use Request Basic Needs Support, or email basicneeds@sfsu.edu.",
+    "sourceUrl": "https://basicneeds.sfsu.edu/", "reviewedAt": "2026-10-02",
+    "availability": "Program schedules and current food availability are unconfirmed. Office hours do not establish food distribution hours.",
+    "eligibility": "Staff assess which programs fit your circumstances; eligibility is not confirmed here."
+  },
+  {
+    "id": "housing", "name": "Housing Resources & Navigation", "category": "Housing",
+    "description": "Basic Needs staff provide housing navigation, resource referrals, and assessment for emergency housing support.",
+    "nextStep": "Review the housing support page and contact basicneeds@sfsu.edu to ask about an assessment.",
+    "sourceUrl": "https://basicneeds.sfsu.edu/housing-resources-navigation", "reviewedAt": "2026-10-02",
+    "availability": "Current funding, hotel placements, and appointment availability are unknown.",
+    "eligibility": "Program staff must assess eligibility. Housing or financial assistance is not guaranteed."
+  },
+  {
+    "id": "career", "name": "Career & Leadership Development", "category": "Jobs & careers",
+    "description": "Explore jobs and internships, get resume and cover letter resources, and prepare for interviews.",
+    "nextStep": "Open the career website and select Schedule an Appointment or explore Handshake.",
+    "sourceUrl": "https://career.sfsu.edu/", "reviewedAt": "2026-10-02",
+    "availability": "Specific appointment openings and suitability for your schedule are unknown.",
+    "eligibility": "Confirm access and service requirements with the career office."
+  },
+  {
+    "id": "counseling", "name": "Counseling & Psychological Services", "category": "Wellbeing",
+    "description": "Find campus counseling services, support options, groups, and workshops.",
+    "nextStep": "Review Counseling Services on the official site or call 415-338-2208 for assistance.",
+    "sourceUrl": "https://psyservs.sfsu.edu/", "reviewedAt": "2026-10-02",
+    "availability": "Appointment openings and current access to particular services are unconfirmed.",
+    "eligibility": "Ask CAPS about service eligibility and the appropriate support option."
+  },
+  {
+    "id": "access", "name": "Disability Programs & Resource Center", "category": "Accessibility",
+    "description": "Connect with support for disability access in academics, campus events, and employment.",
+    "nextStep": "Visit the Students section of the DPRC site or email dprc@sfsu.edu about getting connected.",
+    "sourceUrl": "https://access.sfsu.edu/", "reviewedAt": "2026-10-02",
+    "availability": "Contact DPRC to confirm specialist meeting times and availability.",
+    "eligibility": "DPRC determines accommodations and requirements; this app cannot determine eligibility."
+  },
+  {
+    "id": "tutoring", "name": "Tutoring & Academic Support Center", "category": "Academic support",
+    "description": "Free peer tutoring and academic support for SF State students, with campus and online options.",
+    "nextStep": "Visit the tutoring site and select Make a One-Time Appointment or contact tutoring@sfsu.edu.",
+    "sourceUrl": "https://tutoring.sfsu.edu/", "reviewedAt": "2026-10-02",
+    "availability": "Subject-specific openings are unknown. The page lists differing virtual schedules; confirm your service and time with TASC.",
+    "eligibility": "Ask TASC to confirm support for your course and current enrollment."
+  },
+  {
+    "id": "financial-aid", "name": "Office of Student Financial Aid", "category": "Financial aid",
+    "description": "Get help navigating financial aid applications, awards, scholarships, and the aid process.",
+    "nextStep": "Use Contact Us on the financial aid website to ask about your next step.",
+    "sourceUrl": "https://financialaid.sfsu.edu/", "reviewedAt": "2026-10-02",
+    "availability": "Appointment availability and the status of individual awards are unknown.",
+    "eligibility": "The financial aid office determines eligibility and award conditions. Funding is not guaranteed."
+  },
+  {
+    "id": "advising", "name": "Undergraduate Advising Center", "category": "Academic support",
+    "description": "Get guidance on degree planning, choosing classes, exploring majors, and academic success strategies.",
+    "nextStep": "Use Schedule an Appointment on the advising website, or call 415-338-2101 for booking help.",
+    "sourceUrl": "https://advising.sfsu.edu/", "reviewedAt": "2026-10-02",
+    "availability": "Appointment openings are unknown. Drop-in access depends on staff availability and advising team.",
+    "eligibility": "This center serves undergraduate advising needs; confirm the correct team for your situation."
+  }
+]

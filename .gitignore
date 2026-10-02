@@ -1,0 +1,58 @@
+# Dependencies
+node_modules/
+
+# Next.js and TypeScript generated files
+.next/
+out/
+build/
+dist/
+next-env.d.ts
+*.tsbuildinfo
+.vercel/
+
+# Local environment variables (keep the key-free template)
+.env*
+!.env.example
+
+# Google Cloud ADC and service account credentials
+.config/gcloud/
+.gcloud/
+application_default_credentials.json
+*credentials*.json
+*service-account*.json
+*service_account*.json
+secrets/
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Logs and test output
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+coverage/
+.nyc_output/
+test-results/
+playwright-report/
+
+# Local tooling and legacy Python environment
+.venv/
+__pycache__/
+*.py[cod]
+.cache/
+.npm/
+.eslintcache
+
+# Editor and operating system files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Keep package-lock.json, source files, and data/resources.json tracked.
