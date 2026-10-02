@@ -53,8 +53,8 @@ test("truncated and malformed model responses are rejected", async () => {
   }
 });
 test("directory has eight unique, dated official sources", () => {
-  assert.equal(resources.length, 19);
-  assert.equal(new Set(resources.map(r => r.id)).size, 19);
+  assert.equal(resources.length, 23);
+  assert.equal(new Set(resources.map(r => r.id)).size, 23);
   for (const resource of resources) {
     assert.ok(new URL(resource.sourceUrl).hostname.endsWith(".sfsu.edu"));
     assert.match(resource.reviewedAt, /^\d{4}-\d{2}-\d{2}$/);

@@ -321,5 +321,73 @@
       "phone": "(415) 405-9355 (405-WELL)",
       "email": "mwcmembers@sfsu.edu"
     }
+  },
+  {
+    "id": "police",
+    "name": "University Police Department",
+    "category": "Safety",
+    "description": "Campus police services including SafeWalk safety escorts, crime prevention programs, R.A.D. (Rape Aggression Defense) training, anonymous tip reporting, and lost and found.",
+    "nextStep": "Open the UPD site for SafeWalk and other services, or call the non-emergency line at (415) 338-7200. In an emergency, call 911; this app is not an emergency service.",
+    "sourceUrl": "https://upd.sfsu.edu/",
+    "reviewedAt": "2026-10-02",
+    "availability": "The page lists 24/7 hours. How quickly an escort or response is available is unknown, and the page notes its email address is not monitored 24/7.",
+    "eligibility": "Confirm with UPD how each service works and who can use it.",
+    "contact": {
+      "location": "1600 Holloway Avenue, San Francisco, CA 94132 (specific building not stated on the page reviewed)",
+      "officeHours": "Listed as 24/7",
+      "phone": "(415) 338-7200 (non-emergency)",
+      "email": "upd@sfsu.edu"
+    }
+  },
+  {
+    "id": "title-ix",
+    "name": "Office for Civil Rights & Title IX",
+    "category": "Safety",
+    "description": "Works to keep the SF State community free from discrimination, harassment, sexual misconduct, and related retaliation, and handles reports and concerns.",
+    "nextStep": "Email ocrtitleix@sfsu.edu or call (415) 338-3892 to ask about options. For confidential support, you can also ask the Dean of Students about SAFE Place.",
+    "sourceUrl": "https://titleix.sfsu.edu/",
+    "reviewedAt": "2026-10-02",
+    "availability": "Appointment availability and response times are unknown. This app is not an emergency or reporting service.",
+    "eligibility": "The office determines which process applies to a concern; outcomes are not guaranteed or determined here.",
+    "contact": {
+      "location": "Student Services Building, Suite 205, 1600 Holloway Avenue, San Francisco, CA 94132",
+      "officeHours": "Mon–Fri 9 am–5 pm",
+      "phone": "(415) 338-3892",
+      "email": "ocrtitleix@sfsu.edu"
+    }
+  },
+  {
+    "id": "student-conduct",
+    "name": "Office of Student Conduct",
+    "category": "Student support",
+    "description": "Supports student learning and ethical development through the student disciplinary process, and promotes academic integrity and responsible conduct through outreach and education.",
+    "nextStep": "Email conduct@sfsu.edu or call (415) 338-2032 with questions about a conduct or academic integrity process.",
+    "sourceUrl": "https://conduct.sfsu.edu/",
+    "reviewedAt": "2026-10-02",
+    "availability": "Appointment availability and process timelines are unknown.",
+    "eligibility": "The office decides how a conduct process applies to a situation; outcomes are not determined here.",
+    "contact": {
+      "location": "Student Services Building, Room 402, 1600 Holloway Avenue, San Francisco, CA 94132",
+      "officeHours": "Mon–Fri 8 am–4:30 pm",
+      "phone": "(415) 338-2032",
+      "email": "conduct@sfsu.edu"
+    }
+  },
+  {
+    "id": "graduate-studies",
+    "name": "Graduate Studies & Career Development",
+    "category": "Academic support",
+    "description": "Graduate advising, graduate and certificate programs, newly admitted student support, workshops including resume development, and drop-in Zoom sessions.",
+    "nextStep": "Use Navigator to schedule graduate advising, join the drop-in Zoom (listed as Tuesdays and Thursdays 2–4 pm), or email gradstudies@sfsu.edu.",
+    "sourceUrl": "https://grad.sfsu.edu/",
+    "reviewedAt": "2026-10-02",
+    "availability": "Drop-in Zoom times were listed on the page reviewed and may change. Advising appointment openings are unknown.",
+    "eligibility": "The page describes support for current and newly admitted graduate students; confirm eligibility for your program with the division.",
+    "contact": {
+      "location": "Administration Building, Room 254, 1600 Holloway Avenue, San Francisco, CA 94132",
+      "officeHours": "Mon–Fri 8:30 am–4:30 pm",
+      "phone": "(415) 338-2234",
+      "email": "gradstudies@sfsu.edu"
+    }
   }
 ]

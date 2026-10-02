@@ -89,7 +89,7 @@ Each record contains:
 
 Office hours, program hours, and appointment availability are different facts. `contact.officeHours` never establishes that a program (food distribution, pharmacy, classes, and so on) is open; `availability` says what remains unknown.
 
-Current coverage (19 resources): Basic Needs and housing navigation, University Housing, career support, counseling, student health, disability access, tutoring, advising, EOP, library, financial aid, registrar, IT help, parking and transportation, dean of students, veterans services, international education, and campus recreation. Verify all facts against official pages before adding or changing records. Do not create synthetic entries.
+Current coverage (23 resources): Basic Needs and housing navigation, University Housing, career support, counseling, student health, disability access, tutoring, advising, EOP, library, financial aid, registrar, IT help, parking and transportation, dean of students, veterans services, international education, campus recreation, university police, Title IX, student conduct, and graduate studies. Verify all facts against official pages before adding or changing records. Do not create synthetic entries.
 
 ## Search flow
 

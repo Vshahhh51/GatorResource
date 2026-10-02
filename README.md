@@ -9,16 +9,16 @@ GatorResource is an independent, student-built prototype that helps San Francisc
 ## Features
 
 - **Plain-language search.** Describe one or several needs (for example food plus a part-time job) and get up to three matches, each with an AI explanation, a constraint note, and a next step from the official source. An empty result is valid.
-- **Browse without AI.** All 19 resources can be browsed and filtered by category with no model request.
+- **Browse without AI.** All 23 resources can be browsed and filtered by category with no model request.
 - **Verified office info.** Each resource shows office hours, location, phone, email, an official link, and the date the source was reviewed.
 - **Honest about unknowns.** Program hours, appointment availability, and eligibility are treated as separate facts. If a page did not state something, the card says it is unknown.
 - **Appointment requests.** Students sign in with an SFSU email, choose a preferred date, time of day, and format, and get a pre-filled email draft to the office plus a calendar reminder. This is a *request*, not a confirmed booking (see Limits).
 - **Student sign-in.** Browsing and search are open to everyone. Only appointment requests need an `@sfsu.edu` address.
 - **Save next steps.** Download the matched next steps as a text file.
 
-## The directory (19 resources)
+## The directory (23 resources)
 
-Basic Needs Center, Housing Resources & Navigation, University Housing Office, Career & Leadership Development, Counseling & Psychological Services, Gator Student Health Center, Disability Programs & Resource Center, Tutoring & Academic Support Center, Undergraduate Advising Center, Educational Opportunity Program, J. Paul Leonard Library, Office of Student Financial Aid, Office of the Registrar, IT Service Desk, Parking & Transportation Services, Dean of Students, Veterans Services Office, Division of International Education, and Campus Recreation (Mashouf Wellness Center).
+Basic Needs Center, Housing Resources & Navigation, University Housing Office, Career & Leadership Development, Counseling & Psychological Services, Gator Student Health Center, Disability Programs & Resource Center, Tutoring & Academic Support Center, Undergraduate Advising Center, Educational Opportunity Program, J. Paul Leonard Library, Office of Student Financial Aid, Office of the Registrar, IT Service Desk, Parking & Transportation Services, Dean of Students, Veterans Services Office, Division of International Education, Campus Recreation (Mashouf Wellness Center), University Police Department, Office for Civil Rights & Title IX, Office of Student Conduct, and Graduate Studies & Career Development.
 
 Records live in `data/resources.json` with the source URL and review date (2026-10-02). Add a resource only after reading its official page.
 

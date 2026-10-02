@@ -14,11 +14,12 @@ const paths: Record<string, string> = {
   people: "M9 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6 M16 11a2.5 2.5 0 1 0 0-5 M17 14.2c2.2.4 4 2.3 4 5.8",
   building: "M5 21V4h9v17 M14 9h5v12 M9 8h1 M9 12h1 M9 16h1 M3 21h18",
   fitness: "M6 7v10 M3 10v4 M18 7v10 M21 10v4 M6 12h12",
+  shield: "M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z",
   arrow: "M5 12h14 M13 6l6 6-6 6"
 };
 export const categoryIcon: Record<string, string> = {
   "Academic support": "book", Accessibility: "access", "Financial aid": "dollar", "Food & essentials": "food",
-  Housing: "home", "Jobs & careers": "work", Wellbeing: "heart", "Student support": "people", "Campus services": "building", "Fitness & recreation": "fitness"
+  Housing: "home", "Jobs & careers": "work", Wellbeing: "heart", "Student support": "people", "Campus services": "building", "Fitness & recreation": "fitness", Safety: "shield"
 };
 export function Icon({ name, size = 18 }: { name: string; size?: number }) {
   return <svg className="icon" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={paths[name] ?? paths.spark} /></svg>;

@@ -54,7 +54,7 @@ The central output is a source-linked action list. The model operates within a c
 ## Scope of the current build
 
 1. A description field and three example prompts.
-2. A directory of 19 resources verified against official SFSU pages, with office hours, location, phone, email, source link, and review date.
+2. A directory of 23 resources verified against official SFSU pages, with office hours, location, phone, email, source link, and review date.
 3. Gemini matching with structured output and resource-ID validation.
 4. Up to three result cards with AI explanations, official links, and next steps.
 5. A browsable, filterable directory that works without AI.
