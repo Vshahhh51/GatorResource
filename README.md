@@ -6,6 +6,8 @@ GatorResource is an independent, student-built prototype that helps San Francisc
 
 > Not an official SFSU service and not an emergency-response tool. The directory is small and does not cover every campus service. Students should confirm details with program staff.
 
+> **Status:** runs locally (see [Run locally](#run-locally)). Not deployed publicly; Cloud Run deployment files are included.
+
 ## Features
 
 - **Plain-language search.** Describe one or several needs (for example food plus a part-time job) and get up to three matches, each with an AI explanation, a constraint note, and a next step from the official source. An empty result is valid.
