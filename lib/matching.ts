@@ -58,7 +58,7 @@ export const responseSchema = {
 };
 
 export async function matchResources(description: string, options: {
-  project?: string; model?: string; location?: string; fetcher?: typeof fetch; getHeaders?: typeof adcHeaders;
+  project?: string; model?: string; location?: string; apiKey?: string; fetcher?: typeof fetch; getHeaders?: typeof adcHeaders;
 } = {}): Promise<MatchResult> {
   if (!description.trim() || description.length > 2000) {
     throw new MatchError("invalid_input", "Describe what you need in 1–2,000 characters.", 400);
@@ -67,7 +67,11 @@ export async function matchResources(description: string, options: {
   try { config = vertexConfig(options); }
   catch { throw new MatchError("configuration", "AI search isn’t configured yet. You can still browse campus resources below.", 503); }
   let headers: Headers;
-  try { headers = await (options.getHeaders ?? adcHeaders)(config.url); }
+  try {
+    headers = config.apiKey
+      ? new Headers({ "x-goog-api-key": config.apiKey })
+      : await (options.getHeaders ?? adcHeaders)(config.url);
+  }
   catch { throw new MatchError("credentials", "AI search couldn’t authenticate with Google Cloud. Please browse resources while the connection is checked.", 503); }
   headers.set("Content-Type", "application/json");
   try {
